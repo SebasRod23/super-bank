@@ -1,2 +1,2 @@
 # super-bank
-GD #1 - Registro de movimientos en una cuenta
+GD #1 - Account movements record
