@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomepageController@index')->name('homepage');
 
+Route::get('/account-create', 'AccountController@create')->name('account.create');
+Route::post('/account-create', 'AccountController@createAccount')->name('account.create-account');
+Route::get('/account-manage/{accountId}', 'AccountController@manage')->name('account.manage');
+Route::get('/account-delete/{accountId}', 'AccountController@deleteAccount')->name('account.delete');
+
 Route::get('/register', 'AuthController@register')->name('auth.register');
 Route::post('/register', 'AuthController@saveUser')->name('auth.save-user');
 

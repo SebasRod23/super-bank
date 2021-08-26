@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'user_id',
+        'name',
+    ];
 }
