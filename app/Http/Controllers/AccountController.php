@@ -72,7 +72,7 @@ class AccountController extends Controller
 
         $account->save();
 
-        return view('account.manage', ['account' => $account]);
+        return redirect()->route('account.manage', ['accountId'=>$account->id]);
     }
 
     /**
