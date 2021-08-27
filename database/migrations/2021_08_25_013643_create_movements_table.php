@@ -15,7 +15,11 @@ class CreateMovementsTable extends Migration
     {
         Schema::create('movements', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('account_id')->unsigned();
+            $table->foreign('account_id')->references('id')->on('movements');
+            $table->double('amount')->default(0.0);
             $table->string('name');
+            $table->enum('type', ['Income', 'Expense'])->default('Income');
             $table->timestamps();
         });
     }

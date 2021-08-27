@@ -30,6 +30,24 @@
         Regresar a inicio
       </a> 
       <hr>
+      <a href="{!! route('movement.create', ['accountId'=>$account->id]) !!}" class='btn btn-secondary mb-3'>
+        Crear movimiento
+      </a> 
+      <div class="list-group">
+        <div class="row">
+            @foreach($movements as $movement)
+              <div class="col-sm-4">
+                <div class="card {{ $movement->type == "Income" ? 'border-success' : 'border-danger' }} mb-3">
+                  <div class="card-body">
+                    <h5 class="card-title ">$ {{$movement->amount}}</h5>
+                    <p class="card-text">{{$movement->name}}</p>
+                    <a href="#" class="btn btn-secondary">Editar</a>
+                  </div>
+                </div>
+              </div>
+            @endforeach
+        </div>
+      </div>
     </div>
   </div>
 @endsection

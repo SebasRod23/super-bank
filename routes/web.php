@@ -28,3 +28,6 @@ Route::get('/login', 'AuthController@login')->name('auth.login');
 Route::get('/loginAuth', 'AuthController@loginUser')->name('auth.login-auth');
 
 Route::get('/logout', 'AuthController@logout')->name('auth.logout');
+
+Route::get('/movement-create/{accountId}', 'MovementController@create')->name('movement.create');
+Route::post('/movement-create/{accountId}', 'MovementController@createMovement')->name('movement.create-movement');

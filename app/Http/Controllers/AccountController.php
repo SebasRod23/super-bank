@@ -49,8 +49,9 @@ class AccountController extends Controller
     public function manage($accountId)
     {
         $account = DB::table('accounts')->where('id', $accountId)->first();
+        $movements = DB::table('movements')->where('account_id', $accountId)->get();
 
-        return view('account.manage', ['account' => $account]);
+        return view('account.manage', ['account' => $account], ['movements' => $movements]);
     }
 
     /**
