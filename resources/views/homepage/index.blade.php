@@ -26,6 +26,7 @@
     @endauth
     @guest
     <p>
+        <br>
         <a href="{{ route('auth.login') }}" class='btn btn-primary'>
             Inicia sesión
         </a>

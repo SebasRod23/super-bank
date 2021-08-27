@@ -54,6 +54,27 @@ class AccountController extends Controller
     }
 
     /**
+     * Update selected account
+     * 
+     * @param \App\Models\ModelClass
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $req, $accountId)
+    {
+        $data = $req->validate([
+            'name' => 'required',
+        ]);
+        
+        $account = Account::find($accountId);
+
+        $account->name = $data['name'];
+
+        $account->save();
+
+        return view('account.manage', ['account' => $account]);
+    }
+
+    /**
      * Delete account
      * 
      * @param \App\Models\ModelClass
