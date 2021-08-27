@@ -41,7 +41,7 @@
                   <div class="card-body">
                     <h5 class="card-title ">$ {{$movement->amount}}</h5>
                     <p class="card-text">{{$movement->name}}</p>
-                    <a href="#" class="btn btn-secondary">Editar</a>
+                    <a href="{!! route('movement.edit', ['accountId'=>$account->id, 'movementId'=>$movement->id]) !!}" class="btn btn-secondary">Editar</a>
                   </div>
                 </div>
               </div>
