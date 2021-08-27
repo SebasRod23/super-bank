@@ -38,9 +38,13 @@
             <button type='submit' class='btn btn-primary'>
               Guardar cambios
             </button>
+            <a href="{!! route('movement.delete', ['accountId'=>$accountId, 'movementId'=>$movement->id]) !!}" class='btn btn-danger'>
+              Eliminar
+            </a> 
             <a href="{!! route('account.manage', ['accountId'=>$accountId]) !!}" class='btn btn-secondary'>
               Cancelar
             </a> 
+            
           </div>
         </div>
       </form>

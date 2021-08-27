@@ -31,5 +31,6 @@ Route::get('/logout', 'AuthController@logout')->name('auth.logout');
 
 Route::get('/movement-create/{accountId}', 'MovementController@create')->name('movement.create');
 Route::post('/movement-create/{accountId}', 'MovementController@createMovement')->name('movement.create-movement');
+Route::get('/movement-delete/{accountId}/{movementId}', 'MovementController@delete')->name('movement.delete');
 Route::get('/movement-edit/{accountId}/{movementId}', 'MovementController@edit')->name('movement.edit');
 Route::post('/movement-edit/{accountId}/{movementId}', 'MovementController@editMovement')->name('movement.edit-movement');

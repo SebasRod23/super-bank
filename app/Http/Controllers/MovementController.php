@@ -48,6 +48,21 @@ class MovementController extends Controller
     }
 
     /**
+     * Delete the movement from the db
+     * 
+     * @param \App\Models\ModelClass
+     * @return \Illuminate\Http\Response
+     */
+    public function delete($accountId, $movementId)
+    {
+        $movement = Movement::find($movementId);
+        $this->updateBalance($accountId, -$movement['amount']);
+        $movement->delete();
+
+        return redirect()->route('account.manage', ['accountId'=>$accountId]);
+    }
+
+    /**
      * Show the create movement page
      * 
      * @param \App\Models\ModelClass
